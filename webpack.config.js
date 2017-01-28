@@ -15,7 +15,7 @@ const VENDOR_LIBS = [
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
-    bundle: './src/index.jsx',
+    bundle: './src/index.js',
     vendor: VENDOR_LIBS
   },
   output: {
@@ -27,7 +27,12 @@ module.exports = {
       {
         loader: 'babel-loader',
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        query: {
+          presets: [
+            'es2015', 'react',
+          ]
+        }
       },
       {
         loader: ['style-loader', 'css-loader'],
