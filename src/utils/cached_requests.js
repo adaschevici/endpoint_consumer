@@ -3,7 +3,6 @@ import cache from 'memory-cache';
 
 export function cachedRequest(url) {
   return new Promise((resolve, reject) => {
-    console.log(cache);
     let cachedResponse = cache.get(url);
 
     if (cachedResponse) {
