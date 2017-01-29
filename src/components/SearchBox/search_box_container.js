@@ -32,7 +32,6 @@ class SearchBoxContainer extends Component {
   }
 
   render () {
-    console.log(this.props.searchResults);
     return (
       <SearchBoxView
         renderItem={this.renderListItem}

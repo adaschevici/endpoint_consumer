@@ -37,8 +37,17 @@ module.exports = {
       {
         loaders: ['style-loader', 'css-loader'],
         test: /\.css$/
+      },
+      {
+        loaders: ['json-loader'],
+        test: /\.json$/
       }
     ]
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   },
   plugins: [
     new webpack.DefinePlugin({

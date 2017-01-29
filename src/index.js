@@ -9,6 +9,7 @@ import routes from './routes';
 
 import store from './store';
 
+
 ReactDom.render(
     <Provider store={store}>
       <Router history={browserHistory} routes={ routes }/>

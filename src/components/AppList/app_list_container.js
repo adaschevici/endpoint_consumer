@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import PreloaderView from '../utils/preloader_view';
 import AppListView from './app_list_view';
 import AppListItem from '../AppListItem/app_list_item_view';
 

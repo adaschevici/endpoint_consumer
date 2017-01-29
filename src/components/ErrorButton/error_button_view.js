@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const ErrorButtonView = function (props) {
-  console.log(props);
   return (
     <div>
       {props.errorMessage ?
@@ -22,7 +21,7 @@ const ErrorButtonView = function (props) {
         name="action"
         onClick={(event) => props.handleFetchError(event)}
       >
-        Search
+        Fetch the Error
       </button>
     </div>
   );

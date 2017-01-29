@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchBoxView = function (props) {
-  console.log(props);
   return (
     <div>
       <div>

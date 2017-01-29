@@ -22,7 +22,7 @@ function AppReducer(state=initialState, action) {
     case HANDLE_FIELD_CHANGE:
       return Object.assign({}, state, {searchTerm: action.term});
     case FETCH_SEARCH_RESULTS:
-      return Object.assign({}, state, {searchResults: action.payload.data.ancients});
+      return Object.assign({}, state, {searchResults: action.payload.ancients});
     case REQUEST_ERROR_MESSAGE:
       return Object.assign({}, state, {errorMessage: action.message});
     default:

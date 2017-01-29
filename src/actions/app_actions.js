@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { cachedRequest } from '../utils/cached_requests';
 
 export const FETCH_DATA_LIST = 'FETCH_DATA_LIST';
 export const FETCH_SEARCH_RESULTS = 'FETCH_SEARCH_RESULTS';
@@ -24,13 +24,13 @@ export function requestAncientList() {
 export function fetchSearchResults(searchTerm) {
 
   return (dispatch) => {
-    const request = axios.get(`${ROOT_URL}?search=${searchTerm}`);
+    const request = cachedRequest(`${ROOT_URL}?search=${searchTerm}`);
     request
       .then((json) => dispatch({
-        type: FETCH_SEARCH_RESULTS,
-        payload: request
+          type: FETCH_SEARCH_RESULTS,
+          payload: request
       }));
-  };
+   };
 }
 
 export function requestErrorMessage() {
