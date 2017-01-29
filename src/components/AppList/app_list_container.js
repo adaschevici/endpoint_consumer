@@ -2,8 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import PreloaderView from '../utils/preloader_view';
 import AppListView from './app_list_view';
 import AppListItem from '../AppListItem/app_list_item_view';
+
+import SearchBoxContainer from '../SearchBox/search_box_container';
+import ErrorButtonContainer from '../ErrorButton/error_button_container';
+
 import { fetchDataList, requestAncientList } from '../../actions/app_actions';
 
 class AppListContainer extends Component {
@@ -22,10 +27,19 @@ class AppListContainer extends Component {
 
   render () {
     return (
-      <AppListView
-        renderItem={this.renderListItem}
-        ancients={this.props.ancientsList}
-      />
+      <div>
+        <SearchBoxContainer
+          renderItem={this.renderListItem}
+          results={this.props.searchResults}
+        />
+        <AppListView
+          renderItem={this.renderListItem}
+          ancients={this.props.ancientsList}
+        />
+        <ErrorButtonContainer
+          handleFetchError={this.handleFetchError}
+        />
+      </div>
     );
   };
 }
